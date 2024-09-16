@@ -14,11 +14,7 @@
 user_id     | int (primary key)
 is_online   | boolean
 ```
-               ___________
-   O           | API      |
-  _|_   --->   | Server   |  ---->   Database
-  / \          |__________|
-  User
+            
 
 # API Design for Online/Offline Indicator System
 
