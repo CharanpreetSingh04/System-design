@@ -73,20 +73,24 @@ last_hb     | int (epoch timestamp)
                         u1                100645
                         u2                100032
 
-While fetching user status, 
-1. If user entry does not exist in DB ---> offline
-2. If last_hb < NOW() - threshold(20 sec) ---> offline
-3. Online
+# Fetching User Status
 
-Let's estimate the scale:
+1. If user entry does not exist in the database → **Offline**.
+2. If `last_hb < NOW() - threshold (20 seconds)` → **Offline**.
+3. Otherwise → **Online**.
 
-100 users -> 100 entries
-100000 users -> 100000 entries
-1B users -> 1B entries
+---
 
-There are only two columns with sizes of 4-4 bytes each.
-So, for 1 B users, data can be in the database can be maximum:
-(4 + 4) * (1B) = 8 Billion bytes => 8 GB.
+# Scale Estimation
+
+- **100 users** → 100 entries.
+- **100,000 users** → 100,000 entries.
+- **1 billion users** → 1 billion entries.
+
+Each entry has two columns, 4 bytes each:
+
+So, for 1 B users, data in the database can be maximum:
+(4 bytes for user_id + 4 bytes for last_hb) * 1B users = 8 billion bytes = 8 GB.
 
 ## Storage Optimization
  
