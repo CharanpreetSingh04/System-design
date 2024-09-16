@@ -1,18 +1,19 @@
-Design online/offline indicator system
+# Online/Offline Indicator System Design
 
-Always note all the requirements first.
-   a. Show users as online when they are online and offline when the user is not online.
-   b. System can be able to handle 1 Billion users in total.
+## Requirements:
+- **Online/Offline Status**: The system must show users as online when they are active and offline when they are inactive.
+- **Scalability**: Must handle up to 1 billion users efficiently.
 
-Design of DB schema:
+---
 
-User
-------------------------
-user_id              int
-is_online        boolean
+## Database Schema Design:
 
-The access pattern of this problem is, that the client will send the user_id and the server has to send the status (small key value read).
-When we know that it will be a small read/write then we see that we don't need a disc with a higher memory.
+**User Table:**
+
+```table
+user_id     | int (primary key)
+is_online   | boolean
+
                ___________
    O           | API      |
   _|_   --->   | Server   |  ---->   Database
