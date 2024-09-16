@@ -122,3 +122,14 @@ The database must handle this load effectively. Connection pooling can help mana
 **Connection Pool Example**
  
 ![Connection Pool](https://raw.githubusercontent.com/CharanpreetSingh04/System-design/main/connection-pool.png)
+
+
+# Possible Use Cases
+
+This online/offline indicator system can be adapted for the following scenarios:
+
+- **Failure Detection in Distributed Systems**:
+  - The system can be used to monitor services and detect failures in a distributed system.
+  - Each service sends periodic heartbeat signals to indicate that it is running.
+  - If a service fails to send a heartbeat within the threshold, it is marked as **offline**, helping identify service outages in real time.
+
