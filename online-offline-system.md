@@ -20,24 +20,54 @@ is_online   | boolean
   / \          |__________|
   User
 
-Identify the API calls that are required.
-1. Get status - 
-   a. One way is to make an API call to fetch the status for each user. That way we can consolidate get status responses of all users on the page.
-   b. Another way is to make batch API calls to fetch statuses for a batch of users so that we can reduce the number of API calls to the server.
-2. Put status -
-   a. Pull base model - API server will ping the client in the loop to check if the user is online/offline. 
-                        This cannot be possible here as API server can not talk to the front end.
-   b. Push base model - Client will push the info that it is alive/unalive.
-                        This can be achieved by sending info to the server that the client is alive. 
-                        This will happen repeatedly in the interval of threshold time (20 seconds). This is known as heartbeat.
-                        If the client does not respond in this interval then we mark that user offline.
-                        Instead of is_online, we need to store the last heartbeat which the client has sent to the server.
-                        
-                        Pulse
-                        ------------------------
-                        user_id              int
-                        last_hb              int
-                        Now, whenever heartbeat is received then an update on the database is done which updates the last_hb column with current time in epoch seconds.
+# API Design for Online/Offline Indicator System
+
+## 1. **Get Status API**
+
+### a. **Single User Request**
+- **Description**: Fetch the online/offline status of an individual user.
+- **API Call**: `GET /status/{user_id}`
+  - **Input**: `user_id`
+  - **Output**: `{ "user_id": user_id, "is_online": boolean }`
+
+- **Use Case**: This approach can be used when the client needs the status of a single user, such as on a profile page.
+
+---
+
+### b. **Batch User Request**
+- **Description**: Fetch the online/offline status of multiple users in a single API call.
+- **API Call**: `POST /status/batch`
+  - **Input**: `[{ "user_id": userId1 }, { "user_id": userId2 }, ...]`
+  - **Output**: `[ { "user_id": userId1, "is_online": boolean }, { "user_id": userId2, "is_online": boolean }, ... ]`
+
+- **Use Case**: This approach reduces the number of API calls by fetching the status for multiple users at once, ideal for pages showing a list of users (e.g., messaging apps or friends lists).
+
+---
+
+## 2. **Put Status API**
+
+### a. **Pull-Based Model** (Not Applicable)
+- **Description**: The API server would regularly ping clients to check if they are online. However, this model is not feasible, as the server cannot initiate communication with clients.
+
+---
+
+### b. **Push-Based Model** (Preferred)
+- **Description**: The client periodically sends a "heartbeat" to the server, indicating that the user is online.
+- **API Call**: `POST /status/update`
+  - **Input**: `{ "user_id": userId, "timestamp": epoch_time }`
+  - **Output**: `{ "status": "success" }`
+
+- **Use Case**: The client sends this request at regular intervals (e.g., every 20 seconds). If the server does not receive a heartbeat within the threshold time, the user is marked as offline.
+
+---
+
+## Heartbeat Database Schema (Push-Based Model):
+
+**Pulse Table:**
+
+```table
+user_id     | int (primary key)
+last_hb     | int (epoch timestamp)
                         
                         Update pulse set last_hb = NOW() where user_id = :userId
                         For eg:
