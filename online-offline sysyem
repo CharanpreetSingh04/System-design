@@ -88,6 +88,21 @@ Approach 2: Do we need to worry about the storage?
             Connection pool is the pool of TCP connections already created so that if any request comes than it doesn't have to waste time in creating one.
             The value of max pool size can be defined as:
                   Number of connections DB can handle/Number of servers.
-            
-           
+
+
+
+                            
+               O           
+              _|_  \
+              / \   \       ___________
+              User    \    /___________/|
+               O        \/ | API      | | --------->
+              _|_   --->   | Server   | | --------->  Database
+              / \      /\  |__________| | --------->
+              User   /     |____________/ Connection
+                    /                       pool
+               O   /        
+              _|_ / 
+              / \
+              User
 
