@@ -13,7 +13,7 @@
 ```table
 user_id     | int (primary key)
 is_online   | boolean
-
+```
                ___________
    O           | API      |
   _|_   --->   | Server   |  ---->   Database
