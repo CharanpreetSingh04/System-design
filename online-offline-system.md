@@ -64,6 +64,7 @@ is_online   | boolean
 ```table
 user_id     | int (primary key)
 last_hb     | int (epoch timestamp)
+```
                         
                         Update pulse set last_hb = NOW() where user_id = :userId
                         For eg:
