@@ -103,7 +103,7 @@ The answer is no. We can use the following logic:
 1. If a user entry is present, the user is online.
 2. If the entry does not exist, the user is offline.
  
-We only need to expire (delete) entries after the threshold:
+We only need to expire (delete) entries of inactive users after the threshold:
  
 - **Option A**: Write a cron job that deletes all entries older than 30 seconds. This requires managing an additional service running the cron job.
 - **Option B**: Offload this task to a data store like Redis or DynamoDB, which support TTL (Time to Live). When receiving a heartbeat, update the entry in Redis/DynamoDB with a TTL of 20 seconds. This means every heartbeat extends the expiration time by 20 seconds.
