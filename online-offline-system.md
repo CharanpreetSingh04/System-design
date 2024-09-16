@@ -91,18 +91,5 @@ Approach 2: Do we need to worry about the storage?
 
 
 
-                            
-               O           
-              _|_  \
-              / \   \       ___________
-              User    \    /___________/|
-               O        \/ | API      | | --------->
-              _|_   --->   | Server   | | --------->  Database
-              / \      /\  |__________| | --------->
-              User   /     |____________/ Connection
-                    /                       pool
-               O   /        
-              _|_ / 
-              / \
-              User
+            ![connection-pool](https://github.com/CharanpreetSingh04/System-design/blob/main/connection-pool.png)
 
