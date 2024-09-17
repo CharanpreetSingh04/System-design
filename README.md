@@ -31,6 +31,12 @@ The most crucial part of the system, which needs to scale and handle high traffi
 
 **Connection Pool**:
 - Pool of TCP connections already set up to use so that DB won't waste time in making one.
+---
+
+## **Caching**:
+Caching is nothing but storing the values in a key-value format so that it can save us from big computations.
+Technical use: reduce disk I/O or Network I/O or Computation.
+The most common use case for a cache is when an API server wants to get some value, it first searches in the cache and then in DB if not present in the Cache.
 
 
 
