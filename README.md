@@ -12,11 +12,9 @@ System design involves creating a system that can effectively manage **availabil
 4. **Concurrency**: Efficiently handling multiple simultaneous requests to prevent bottlenecks.
 5. **Delegation**: Offloading tasks to make the server more available to handle new requests.
 6. **Communication**: Ensuring smooth communication between end users and servers to keep the system responsive.
-
+---
 
 1. **Database**: The most crucial part of the system, which needs to scale and handle high traffic. The choice of database should align with the specific use case to ensure performance and reliability.
-
----
 
 ### Common Practices:
 
