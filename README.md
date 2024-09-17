@@ -23,10 +23,10 @@ System design involves creating a system that can effectively manage **availabil
 **Soft Delete**:
 - Instead of permanently deleting data, a "soft delete" marks the entry as deleted but keeps it in the database.
 
-**Benefits of Soft Delete**:
-1. **Recoverability**: Deleted data can be restored.
-2. **Archival**: Useful for data retention.
-3. **Audit**: Track deletions for auditing purposes.
+   **Benefits of Soft Delete**:
+   1. **Recoverability**: Deleted data can be restored.
+   2. **Archival**: Useful for data retention.
+   3. **Audit**: Track deletions for auditing purposes.
 
 - Systems like Gmail and Facebook use soft deletes to allow data recovery and avoid performance hits from restructuring the database B+ tree.
 
