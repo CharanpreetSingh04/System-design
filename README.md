@@ -34,11 +34,16 @@ The most crucial part of the system, which needs to scale and handle high traffi
 ---
 
 ## **Caching**:
-Caching is nothing but storing the values in a key-value format so that it can save us from big computations.
-Technical use: reduce disk I/O or Network I/O or Computation.
-The most common use case for a cache is when an API server wants to get some value, it first searches in the cache and then in DB if not present in the Cache.
+Caching involves storing values in a key-value format to avoid costly computations and improve system efficiency.
 
+### Technical Uses:
+- Reduces **disk I/O**, **network I/O**, or **computation** time.
+  
+### Common Use Case:
+- When an API server requests data, it first checks the cache. If the value isn't found, it queries the database.
 
+**Cache Diagram**: ![Cache Design](https://github.com/CharanpreetSingh04/System-design/blob/main/Cache.png)
+---
 
 # System Design References
 
