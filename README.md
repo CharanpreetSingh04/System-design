@@ -42,6 +42,9 @@ Caching involves storing values in a key-value format to avoid costly computatio
 ### Common Use Case:
 - When an API server requests data, it first checks the cache. If the value isn't found, it queries the database.
 
+Tip: cache can be used at any place not just before DB call. A few places where cache is used are
+Operating Systems, Networking layers including Content Delivery Networks (CDN) and DNS, web applications, and Databases. 
+
 **Cache Diagram**: ![Cache Design](https://github.com/CharanpreetSingh04/System-design/blob/main/Cache.png)
 ---
 
