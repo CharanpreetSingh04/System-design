@@ -40,6 +40,6 @@ The most crucial part of the system, which needs to scale and handle high traffi
    - Detailed design of a system to track user status (online/offline).
    - Includes database schema, API design, and scalability considerations.
    
-   **Link**: [Online/Offline System on GitHub](https://github.com/CharanpreetSingh04/System-design/blob/main/online-offline-system.md)
+   **Link**: [Online/Offline System](https://github.com/CharanpreetSingh04/System-design/blob/main/online-offline-system.md)
 
 
