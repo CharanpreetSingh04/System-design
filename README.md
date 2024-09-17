@@ -35,7 +35,7 @@ System design involves creating a system that can effectively manage **availabil
 
 
 
-# System Design Reference
+# System Design References
 
 1. **Online/Offline System**:
    - Detailed design of a system to track user status (online/offline).
