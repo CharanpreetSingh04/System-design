@@ -14,7 +14,7 @@ System design involves creating a system that can effectively manage **availabil
 6. **Communication**: Ensuring smooth communication between end users and servers to keep the system responsive.
 ---
 
-1. **Database**: The most crucial part of the system, which needs to scale and handle high traffic. The choice of database should align with the specific use case to ensure performance and reliability.
+## **Database**: The most crucial part of the system, which needs to scale and handle high traffic. The choice of database should align with the specific use case to ensure performance and reliability.
 
 ### Common Practices:
 
