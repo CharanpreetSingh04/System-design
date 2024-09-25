@@ -67,6 +67,23 @@ Operating Systems, Networking layers including Content Delivery Networks (CDN) a
      ```sql
      REFRESH MATERIALIZED VIEW mymatview;
      ```
+3. **Browser**
+   - Local storage can store JWT tokens, static images, and static assets.
+
+4. **CDN (Content Delivery Network)**
+   - Cache full responses (e.g., search results) for quicker retrieval, avoiding calls to the API server.
+
+5. **API Server Disk**
+   - Utilize the server's disk space to store data, freeing resources by reducing the need to query the DB server.
+   - In many systems, the server disk is underutilized so that extra storage can be leveraged.
+     
+6. **Load Balancer**
+   - Can cache error responses, such as for incorrect URLs or body types, to optimize performance and reduce repeated server hits.
+
+7. **Centralized Cache**
+   - The most common use case (illustrated in the diagram at the start of this section).
+
+**Note**: Among all the above use cases, the most feasible option should be selected based on cost and performance considerations.
 ---
 
 # System Design References
