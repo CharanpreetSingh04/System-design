@@ -46,6 +46,27 @@ Tip: cache can be used at any place not just before DB call. A few places where 
 Operating Systems, Networking layers including Content Delivery Networks (CDN) and DNS, web applications, and Databases. 
 
 **Cache Diagram**: ![Cache Design](https://github.com/CharanpreetSingh04/System-design/blob/main/Cache.png)
+
+### Caching Opportunities
+
+1. **API Server Main Memory**
+   - Store static content like URLs, API keys, and secrets.
+   - **Disadvantages**:
+     1. Limited capacity.
+     2. API server down -> data unavailable.
+     3. Inconsistent for transactional data.
+
+2. **Materialized DB Views**
+   - Optimized views that cache query results for faster access.
+   - Unlike normal views, data is stored and not re-fetched from the DB.
+   - Create via: 
+     ```sql
+     CREATE MATERIALIZED VIEW mymatview AS ${{DB query}}
+     ```
+   - Refresh via:
+     ```sql
+     REFRESH MATERIALIZED VIEW mymatview;
+     ```
 ---
 
 # System Design References
