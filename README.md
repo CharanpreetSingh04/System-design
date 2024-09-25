@@ -105,6 +105,9 @@ The ability to handle a large number of concurrent requests ensures that the sys
      1. Complex architecture
      2. Network Partitioning
 
+Best way to scale:
+![scaling](https://github.com/user-attachments/assets/54b8efff-d385-4709-961c-a6f86ec27ff6)
+
 ---
 
 # System Design References
