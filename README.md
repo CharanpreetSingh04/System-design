@@ -100,7 +100,7 @@ The ability to handle a large number of concurrent requests ensures that the sys
    - Linear performance improvement.
    - Examples: AKS, AWS, etc.
    - **Kubernetes (K8s)** is widely used for horizontal scaling. Below is the architecture of Kubernetes.
-
+      **Link**: [Kubernetes diagram] (https://github.com/CharanpreetSingh04/System-design/blob/main/minikube1-removebg-preview%20(1).png)
 
 ---
 
