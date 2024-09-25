@@ -86,6 +86,24 @@ Operating Systems, Networking layers including Content Delivery Networks (CDN) a
 **Note**: Among all the above use cases, the most feasible option should be selected based on cost and performance considerations.
 ---
 
+
+## **Scaling**:
+The ability to handle a large number of concurrent requests ensures that the system remains available.
+
+### Types of Scaling:
+1. **Vertical Scaling**: Increase server RAM and disk capacity. (HULK)
+   - Easier to manage but risks downtime.
+   - Single point of failure.
+
+2. **Horizontal Scaling**: Add more machines with the same configurations. (MINIONS)
+   - Fault tolerance, harder to manage.
+   - Linear performance improvement.
+   - Examples: AKS, AWS, etc.
+   - **Kubernetes (K8s)** is widely used for horizontal scaling. Below is the architecture of Kubernetes.
+
+
+---
+
 # System Design References
 
 1. **Online/Offline System**:
