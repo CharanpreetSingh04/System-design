@@ -109,6 +109,24 @@ The ability to handle a large number of concurrent requests ensures that the sys
 Scale vertically first then horizontally.
 ![scaling](https://github.com/user-attachments/assets/54b8efff-d385-4709-961c-a6f86ec27ff6)
 
+Whenever scale, always do it bottoms up.
+![image](https://github.com/user-attachments/assets/36463129-7711-4384-b56b-bb4cb6f52633)
+
+### Scaling DB
+
+1. **Vertical Scaling**: Increase the specs of the DB server by adding more RAM, and disk space, and increasing the connection pool size.
+![image](https://github.com/user-attachments/assets/41a9c9b0-41fc-41fb-9c49-77820430c9d2)
+
+2. **Read Replicas**: Create replicas of the master DB to handle read-heavy traffic. Writes happen on the master, while replicas handle the reads.
+![image](https://github.com/user-attachments/assets/c2d2b12b-8cac-4da1-91e2-2f16ed2aa25b)
+
+
+3. **Sharding**: Split the database into multiple parts. The API server uses a hash or identifier to decide which shard (database) to interact with. For example:
+![image](https://github.com/user-attachments/assets/79897b37-3955-4c29-aa76-c45ed008150d)
+
+
+
+
 ---
 
 # System Design References
