@@ -120,8 +120,10 @@ Whenever scale, always do it bottoms up.
 2. **Read Replicas**: Create replicas of the master DB to handle read-heavy traffic. Writes happen on the master, while replicas handle the reads.
 ![image](https://github.com/user-attachments/assets/c2d2b12b-8cac-4da1-91e2-2f16ed2aa25b)
 
+**In a multi-master setup, conflicts can happen. In that case, a possible way to avoid conflict is by adding stickiness to the system, allowing all writes of a particular record to go to a specific Master node, ensuring sequential operations, and simplifying the core requirement of Last Write Wins.**
 
-3. **Sharding**: Split the database into multiple parts. The API server uses a hash or identifier to decide which shard (database) to interact with. For example:
+
+4. **Sharding**: Split the database into multiple parts. The API server uses a hash or identifier to decide which shard (database) to interact with. For example:
 ![image](https://github.com/user-attachments/assets/79897b37-3955-4c29-aa76-c45ed008150d)
 
 
